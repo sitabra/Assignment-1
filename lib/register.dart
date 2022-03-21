@@ -12,6 +12,7 @@ class _MyRegisterState extends State<MyRegister> {
   TextEditingController _password1Controller = TextEditingController();
   TextEditingController _emailController = TextEditingController();
   TextEditingController _firstnameController = TextEditingController();
+  TextEditingController _confirmpasswordController = TextEditingController();
   bool checkBoxValue = false;
   @override
   Widget build(BuildContext context) {
@@ -91,6 +92,7 @@ class _MyRegisterState extends State<MyRegister> {
                 height: 10,
               ),
               TextField(
+                controller: _confirmpasswordController,
                 obscureText: true,
                 decoration: InputDecoration(
                   fillColor: Colors.black12,
@@ -115,9 +117,11 @@ class _MyRegisterState extends State<MyRegister> {
                   style: ElevatedButton.styleFrom(
                       onPrimary: Colors.white,
                       primary: Colors.deepPurple,
-                      minimumSize: const Size(340, 40)),
+                      minimumSize: const Size(323, 40)),
                   onPressed: () {
-                    showDialog(
+                    _firstnameController.text.isEmpty || _username1Controller.text.isEmpty || _emailController.text.isEmpty
+                    || _password1Controller.text.isEmpty || _confirmpasswordController.text.isEmpty ? null
+                    : showDialog(
                       context: context,
                       builder: (BuildContext context) {
                         return AlertDialog(

@@ -67,7 +67,7 @@ class _HomePageState extends State<HomePage> {
                   style: ElevatedButton.styleFrom(
                       onPrimary: Colors.white,
                       primary: Colors.deepPurple,
-                      minimumSize: const Size(340, 40)),
+                      minimumSize: const Size(323, 40)),
                   onPressed: () {
                     _usernameController.text.isEmpty ||
                             _passwordController.text.isEmpty
@@ -96,12 +96,12 @@ class _HomePageState extends State<HomePage> {
                   },
                   child: const Text('Log in')),
               const SizedBox(
-                height: 20,
+                height: 10,
               ),
               OutlinedButton(
                   style: OutlinedButton.styleFrom(
                       primary: Colors.black,
-                      minimumSize: const Size(340, 40),
+                      minimumSize: const Size(323, 40),
                       side: const BorderSide(color: Colors.black)),
                   onPressed: () {
                     Navigator.pushNamed(context, 'register');
